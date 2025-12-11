@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Floor Plan Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>Floor Plan Tracker</h1>
+      <div id="status-message" class="status-message"></div>
+    </header>
+
+    <!-- Main canvas area -->
+    <div class="canvas-container">
+      <canvas id="floorplan-canvas"></canvas>
+    </div>
+
+    <!-- Controls panel -->
+    <div class="controls-panel">
+      <!-- Load floor plan -->
+      <div class="control-section file-picker">
+        <button id="load-floorplan-btn" class="btn btn-primary">Load Floor Plan (Image/PDF)</button>
+        <input type="file" id="floorplan-input" accept="image/*,application/pdf,.pdf" class="file-input-overlay">
+      </div>
+
+      <!-- Calibration menu -->
+      <div class="control-section">
+        <h3>Calibration</h3>
+        <button id="cal-two-point" class="btn">Two-Point Distance</button>
+        <button id="cal-start-point" class="btn">Set Start Point</button>
+        <button id="cal-reference-point" class="btn">Add Reference Point</button>
+      </div>
+
+      <!-- Dead reckoning controls -->
+      <div class="control-section">
+        <h3>Navigation</h3>
+        <div class="dr-controls">
+          <button id="dr-left" class="btn btn-dr">↶ 10°</button>
+          <button id="dr-forward" class="btn btn-dr">↑ Step</button>
+          <button id="dr-right" class="btn btn-dr">↷ 10°</button>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div class="control-section">
+        <h3>Settings</h3>
+        <label class="setting-item">
+          <span>Correction Mode:</span>
+          <select id="correction-mode">
+            <option value="gps-wifi">GPS + Wi-Fi</option>
+            <option value="wifi-only">Wi-Fi Only</option>
+            <option value="manual-only">Manual Only</option>
+          </select>
+        </label>
+        <label class="setting-item">
+          <input type="checkbox" id="show-refs" checked>
+          <span>Show Reference Points</span>
+        </label>
+      </div>
+
+      <!-- Reference points list -->
+      <div class="control-section">
+        <h3>Reference Points</h3>
+        <div id="reference-list" class="reference-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="dist/app.js"></script>
+</body>
+</html>
+

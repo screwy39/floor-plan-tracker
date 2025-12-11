@@ -1,0 +1,14 @@
+{
+  "name": "floor-plan-tracker",
+  "version": "1.0.0",
+  "description": "Mobile-first floor plan tracking with dead reckoning and GPS/Wi-Fi fusion",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "npx http-server . -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "http-server": "^14.1.1"
+  }
+}

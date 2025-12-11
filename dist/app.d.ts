@@ -1,0 +1,37 @@
+export declare class FloorPlanTrackerApp {
+    private stateStore;
+    private floorplanView;
+    private deadReckoning;
+    private canvas;
+    private calibrationMode;
+    private twoPointCalibration;
+    private isPanning;
+    private lastPanPoint;
+    private lastPinchDistance;
+    private touchStartPoints;
+    constructor(canvas: HTMLCanvasElement);
+    private setupEventListeners;
+    private setupUI;
+    private setupResize;
+    private handleFloorPlanLoad;
+    private setFloorPlanImage;
+    private loadPdfAsImage;
+    private fitImageToCanvas;
+    private startTwoPointCalibration;
+    private startStartPointCalibration;
+    private startReferencePointCalibration;
+    private handleTouchStart;
+    private handleTouchMove;
+    private handleTouchEnd;
+    private getTouchDistance;
+    private handleCalibrationTap;
+    private promptTwoPointDistance;
+    private setStartPoint;
+    private addReferencePoint;
+    private updatePose;
+    private startCorrectionLoop;
+    private updateReferenceList;
+    private render;
+    private showMessage;
+}
+//# sourceMappingURL=app.d.ts.map
