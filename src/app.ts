@@ -107,6 +107,22 @@ export class FloorPlanTrackerApp {
       this.stateStore.setShowReferencePoints((e.target as HTMLInputElement).checked);
     });
 
+    // Instructions overlay
+    const instructionsBtn = document.getElementById('show-instructions') as HTMLButtonElement | null;
+    const instructionsOverlay = document.getElementById('instructions-overlay') as HTMLElement | null;
+    const closeInstructions = document.getElementById('close-instructions') as HTMLButtonElement | null;
+
+    const setInstructionsVisible = (visible: boolean) => {
+      if (!instructionsOverlay) return;
+      instructionsOverlay.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    };
+
+    instructionsBtn?.addEventListener('click', () => setInstructionsVisible(true));
+    closeInstructions?.addEventListener('click', () => setInstructionsVisible(false));
+    instructionsOverlay?.addEventListener('click', (e) => {
+      if (e.target === instructionsOverlay) setInstructionsVisible(false);
+    });
+
     // Reference list
     this.updateReferenceList();
   }

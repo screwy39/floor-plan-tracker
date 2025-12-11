@@ -65,11 +65,48 @@
         </label>
       </div>
 
+      <!-- Help / How to use -->
+      <div class="control-section">
+        <h3>Help</h3>
+        <button id="show-instructions" class="btn">How to use</button>
+      </div>
+
       <!-- Reference points list -->
       <div class="control-section">
         <h3>Reference Points</h3>
         <div id="reference-list" class="reference-list"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- Instructions overlay -->
+  <div id="instructions-overlay" class="instructions-overlay" aria-hidden="true">
+    <div class="instructions-content">
+      <button id="close-instructions" class="btn btn-primary close-btn">Close</button>
+      <h2>How to use</h2>
+      <ol>
+        <li>Load a floor plan (image or PDF) with the green button.</li>
+        <li>Calibrate:
+          <ul>
+            <li>Select “Two-Point Distance”, tap two known points, enter the real distance.</li>
+            <li>Select “Set Start Point”, tap your current location on the plan.</li>
+          </ul>
+        </li>
+        <li>Move/rotate using the navigation buttons:
+          <ul>
+            <li>“↑ Step” moves ~1 meter forward.</li>
+            <li>“↶ 10°” / “↷ 10°” rotate heading.</li>
+          </ul>
+        </li>
+        <li>Add reference points for corrections:
+          <ul>
+            <li>Tap “Add Reference Point”, tap location on plan, allow geolocation.</li>
+            <li>Use “Snap Here” in the list to jump to a reference.</li>
+          </ul>
+        </li>
+        <li>Use Settings to choose correction mode and toggle reference markers.</li>
+        <li>Pinch to zoom, drag to pan the floor plan.</li>
+      </ol>
     </div>
   </div>
 
